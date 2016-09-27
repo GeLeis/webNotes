@@ -27,5 +27,5 @@
 <br/>
 下载链接: <a href="thunder://***************" target="_blank">点击下载</a>
 <br/>
-定义锚点，使用锚点: <a name="_abc"></a>   <br/> <hr><a href="#_abc"></a>
+定义锚点，使用锚点: <a name="_abc"></a>   <br/> <hr><a href="#_abc">点击回到锚点</a>
 
