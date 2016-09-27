@@ -4,6 +4,6 @@
 <br/>font标签<font size="7">红色</font>,size的取值范围1-7，7最大<br/>
 <b>b加粗</b>
 <br/>转移字符&nbsp;nbsp
-<br/>2&lt;3
-<br/>3$gt;2;
+<br/>lt表示<  2&lt;3
+<br/>gt表示>  3&gt;2;
 
