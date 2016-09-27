@@ -20,3 +20,8 @@
    <li>c</li>
 </ol>
 
+<br/>
+图形标记:title是指鼠标移动图形上的提示，alt是图片加载不到时显示的文字,border是图形的边框 
+<br/>
+超链接<a href="wwww.baidu.com" target="_blank"></a>
+
