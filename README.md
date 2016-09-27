@@ -23,5 +23,9 @@
 <br/>
 图形标记:title是指鼠标移动图形上的提示，alt是图片加载不到时显示的文字,border是图形的边框 
 <br/>
-<a href="https://www.baidu.com/" target="_blank">超链接</a>
+超链接a: <a href="https://www.baidu.com/" target="_blank">超链接</a>
+<br/>
+下载链接: <a href="thunder://***************" target="_blank">点击下载</a>
+<br/>
+定义锚点，使用锚点: <a name="_abc"></a>   <br/> <hr><a href="#_abc"></a>
 
