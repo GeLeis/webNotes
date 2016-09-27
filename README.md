@@ -7,7 +7,7 @@
 <br/>lt表示<   a&lt;b
 <br/>gt表示>   a&gt;b;但是如果是比较数字1<2，那么不需要转义 <br/>
 无需列表   
-爱好<ul>
+爱好<ul type="circle">
  <li>a</li>
   <li>b</li>
    <li>c</li>
