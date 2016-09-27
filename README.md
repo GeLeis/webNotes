@@ -29,4 +29,5 @@
 下载链接: <a href="thunder://***************" target="_blank">点击下载</a>
 <br/>
 定义锚点，使用锚点: <a name="_abc"></a>   <br/> <hr><a href="#_ac">点击回到锚点</a>
-
+<br/>
+绘制表格:<table><tr><td>姓名</td><td>年龄</td></tr><tr><td>tom</td><td>18</td></tr><tr><td>Jerry</td><td>21</td></tr></table>
