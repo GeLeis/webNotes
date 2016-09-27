@@ -37,6 +37,22 @@ frameset框架集合，用frameset时不需要body,frame没一个子页面,指�
 如果想在a页面有个超链接，但是想在b中打开，那么在a中指定超链接时<a href="xxxxx" target="_dd">在b中打开</a>  <br/>并在指明框架页面时<frame src="b页面" name="_dd"/>
 
 <br/>
-表单，放在body内，用<form>
-用户名：<input type="text"/>
-</form>表示范围
+表单，放在body内，用<form action="#提交服务器" method="get">  
+用户名：<input type="text" name="username"/><!--健名-->disabled属性为yes时，提交的表单中没有username，readonly是不能修改，但是还可以提交
+<input type="submit" value="提交"/>
+</form>表示范围,<br/>
+radio单选框
+<br/>多选框checkbox提交时，如果有多个选项，会产生多个键值对
+<br/>下拉选,不是input类型，而是select标签修饰
+<select name="edu">
+<option value="bk">本科</option>
+<option value="zk">专科</option>
+<option value="ss">硕士</option>
+</select>
+<br/>
+文本域：<textarea rows="10" cols="">
+<br/>
+文件上传<input type="file" name="file"/>
+<br/>
+隐藏域
+<input type="hidden" name="haha" value="heihei"/>在表单上看不到却可以提交
