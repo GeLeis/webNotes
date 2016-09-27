@@ -4,6 +4,6 @@
 <br/>font标签<font size="7">红色</font>,size的取值范围1-7，7最大<br/>
 <b>b加粗</b>
 <br/>转移字符&nbsp;nbsp
-<br/>lt表示<  2&lt;3
-<br/>gt表示>  3&gt;2;
+<br/>lt表示<   a&lt;b
+<br/>gt表示>   a&gt;b;但是如果是比较数字1<2，那么不需要转义
 
