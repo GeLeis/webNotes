@@ -55,4 +55,107 @@ radio单选框
 文件上传<input type="file" name="file"/>
 <br/>
 隐藏域
-<input type="hidden" name="haha" value="heihei"/>在表单上看不到却可以提交
+<input type="hidden" name="haha" value="heihei"/>在表单上看不到却可以提交   
+meta标签是告诉浏览器用什么样的方式去解码0101这些数据<br/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">  <br/>
+3s后自动刷新到baidu
+<meta http-equiv="Refresh" content="3;url=http://www.baidu.com">
+
+html注释<!--注释内容-->
+
+2.CSS：cascade style sheet层叠样式表   
+结合方式1：
+所有的html标签都有style属性，给标签添加style属性 <p stype="color:red;"></p> ，style是css属性<br/>
+结合方式2:
+在heade中添加style<br/>
+<head>
+<style type="text/css">
+p {
+ color:red; 
+}
+</style>
+</head>
+<br/>
+结合方式3:
+创建.css文件,在里面写
+p{
+color:red;
+}
+，然后在需要引用css文件的html文件的head里，添加<link rel="stylesheet" type="text/css" href="p.css引用的"> 
+
+css语法
+选择器{
+  样式属性键:样式属性值;
+  样式属性键:样式属性值1 样式属性值2 样式属性值3;/*   这里是css中的注释,一个键存在多个值的情况下，值用空格隔开  */
+}
+
+选择器类型
+
+标签选择器
+a{
+ 键:值
+}
+
+id选择器
+#one{
+ 键:值
+}
+引用时<a id="one"></a>指明标签id，同时要保证id的使用在同一个页面中唯一
+
+类选择器
+.one{
+ 键:值
+}
+引用时<a class="one">************</a>，类选择器可以多次引用
+
+伪类选择器
+选择标签的某个状态，需要配合其他选择器使用
+状态种类:
+l  未访问过的
+v  访问过
+h  悬浮鼠标放在上面
+a  激活，点击
+a:link{
+ color:green;
+}
+a:visited{
+ color:black;
+}
+a:hover{
+color:white
+}
+a:active{
+color:pink
+}
+还可以将前三种选择器组合起来
+
+样式设置背景图片
+background-image:url("mn.jpg");
+默认情况下，图片会重复铺满整个页面，为了禁用图片重复，一张图片铺满，可以设置
+background-repeat:no-repeat;
+background-attachment:fixed;背景跟着屏幕滚动
+
+div块级标签，占据范围是若干整行， span行内标签，占据的是一行单中的一部分
+
+块内标签：div p ul li ol ..
+行内标签: span a font b(加粗)  ..
+
+盒子的构成由块
+padding：内边距，
+margin：外边距,
+padding:
+1个值，上下左右
+2个值，第一个上下，第二个左右
+3个值，1上，2左右，3下
+
+3.javascript
+结合方式1:在head里面
+<head>
+<script type="text/javascript">
+alert("haha")
+</script>
+
+结合方式2:
+<script type="text/javascript" src="hello.js"></script>，但是script标签中，不能再输写js代码
+
+</head>
