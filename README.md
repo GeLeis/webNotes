@@ -216,7 +216,7 @@ function func(){
 
 function对象的创建
 var fun2 = function(a,b){
- alert(a+b);
+ return(a+b);
 };
 
 
@@ -235,3 +235,25 @@ arguments.length;//参数的个数。argrments是参数的封装,实际传递的
 
 超链接标签也可以使用javascript协议
 <a href="javaScript:alert('haha');"> 点我</a>
+
+<a href="javaScript:fun2(1,2);">点我</a>,函数fun2有返回值，默认情况下，会跳转到新的页面显示结果。如果想避免这样的结果，那么就使用void拦截返回的结果
+<a href="havaScript:void(fun2(1,2);)">点我</a>
+
+下面的0，起到了覆盖标签原有的功能,
+<a href="javaScript:void(0)" onclick="alert('haha')">哈哈</a>
+
+js中5个原始类型，有3个包装类，Number  String  Boolean ,原始类型可以直接调用包装类型的属性函数
+
+String
+创建:var str = new String(1);
+
+"abc" instanceof String  ==>false，instalceof只用于判断对象是否是指定类型,"abc"是原始类型
+
+Global全局对象:全局对象是与定义的对象，作为javaScript的全局函数和全局属性的占位符 。使用时不需要创建
+
+decodeURI()解码某个编码的URI,
+encodeURI()，把字符串编码为URI
+
+decodeURIComponent()解码某个编码的URI,
+encodeURIComponent()，把字符串编码为URI
+
