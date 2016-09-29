@@ -159,3 +159,9 @@ alert("haha")
 <script type="text/javascript" src="hello.js"></script>，但是script标签中，不能再输写js代码
 
 </head>
+
+在javascript中,var是弱类型(变量的类型是可以改变的，可以赋值1,"a",false)
+
+js中每行语句的结束使用;，也可以不使用
+
+声明变量是，可以不加var，作用范围为全局，加var，作用范围在代码块中
