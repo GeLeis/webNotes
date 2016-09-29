@@ -165,3 +165,73 @@ alert("haha")
 js中每行语句的结束使用;，也可以不使用
 
 声明变量是，可以不加var，作用范围为全局，加var，作用范围在代码块中
+
+js中的变量分类:原始类型(基本数据类型),对象类型(引用类型)
+原始类型种类:
+number,不区分整形，小数
+string,"hello"和'world'都是字符串类型，不区分单引号双引号
+boolean,
+null,对象数据类型的占位符
+undefined,null的衍生值，通常是系统自动赋值,比如当创建一个变量，但是没有初始化 
+
+js中typeof＝>返回原始类型的类型,不适用于对象类型
+
+typeof(null)返回的是object类型
+
+var c="1234"
+c= +c;此时，c变成数字类型，因为例子中+是数学运算符，
+
+number==>boolean，除了+0,-0，NAN(其他未知数,用来表示错误的数字 ),其他都是true 
+NaN,not a number，比如var n =+"abc"，此时就是NaN
+
+sting==>boolean，字符串不为空，就是true，
+null==>boolean,相当于false
+undefined==>boolean,false
+Object＝>true，只要对象存在，那么就是true
+
+
++"1"的结果为1
+
+var a = "1"+1,==>输出"11"，只要有字符串存在,+就是拼接作用,但是其他数学运算符，字符串会自动转换为数字
+
+"2">1,true,"2"=>2
+
+"2">"1",true，字符串的比较是比较assci码
+
+2==true,在比较的时候，是将boolean类型转换成数字类型,此结果为false
+
+0==null，null转换成数字相当于NaN，所以为false
+null==undefine,true
+NaN==NaN，false,凡是NaN参与的，除了!  !=，其他全是false
+
+===在比较时包括类型本身
+
+Object是所有对象的父类
+toString(),
+n
+function对象
+function func(){
+ alert("hello");
+}
+
+function对象的创建
+var fun2 = function(a,b){
+ alert(a+b);
+};
+
+
+var fun3 = new Function("alert('helloe3')");
+fun2.length==>打印的是fun2的参数个数
+fun2.toString===>打印函数的定义 
+
+fun2(1,2,3,5);//3,只用前两个
+fun2();//NaN
+
+js中的函数在调用时，只看函数名称，不看参数
+
+arguments.length;//参数的个数。argrments是参数的封装,实际传递的参数个数
+
+如果一个寒暑没有返回值，但是采用alert(fun()),那么打印的结果是undefined
+
+超链接标签也可以使用javascript协议
+<a href="javaScript:alert('haha');"> 点我</a>
