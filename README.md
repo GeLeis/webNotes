@@ -40,6 +40,7 @@ frameset框架集合，用frameset时不需要body,frame没一个子页面,指�
 表单，放在body内，用<form action="#提交服务器" method="get">  
 用户名：<input type="text" name="username"/><!--健名-->disabled属性为yes时，提交的表单中没有username，readonly是不能修改，但是还可以提交
 <input type="submit" value="提交"/>
+<input type="button" onclick="close();" />   //close为script中的方法名
 </form>表示范围,<br/>
 radio单选框
 <br/>多选框checkbox提交时，如果有多个选项，会产生多个键值对
@@ -251,9 +252,112 @@ String
 
 Global全局对象:全局对象是与定义的对象，作为javaScript的全局函数和全局属性的占位符 。使用时不需要创建
 
-decodeURI()解码某个编码的URI,
-encodeURI()，把字符串编码为URI
+decodeURI()解码某个编码的URI,将中文转成16进制
+encodeURI()，把字符串编码为URI，将16进制转成中文
 
-decodeURIComponent()解码某个编码的URI,
-encodeURIComponent()，把字符串编码为URI
+decodeURIComponent()解码某个编码的URI,除了英文,.,数字,其他的都转成16进制
+encodeURIComponent()，把字符串编码为URI,与上面相反
 
+parseInt   转换成整数
+parseFloat 转换成浮点数
+
+将字符串转换成数字的方法:
+var str = "123";
+var num1 = parseInt(str);从左到右依次转换，转换到遇到不能转换的字符为止,比如parseInt("123a")===>123
+var num2 = +str;
+var num3 = new Number(str);
+
+判断一个值是否是NaN，不能用==来判断，因为NaN不与任何值相等，只能用isNaN
+
+eval()，解析运行方法，就是将括号内的js代码执行，返回产生了的值
+alert(eval("1+1"));//2
+alert(eval("new String('abc')"));
+
+Math对象 
+random()，生成0～1之间的随机数
+
+数组对象
+var arr1 = [1,2,3,4];
+var arr2 = new Array(1,2,3,4);
+var arr3 = new Array(4);4表示数组长度 
+
+push    将一个值放入数组的0索引位置
+pop   将0索引的变量移除并返回
+reverse 将一个数组反转，会对数组本身顺序进行调整
+sort排序，默认按照字符串比较的方式排序
+var arr5 = [100,1,5,9,2]; arr5.sort()===>[1,100,2,5,9]
+
+sort可以传入一个比较器（有两个参数的函数）
+规则:a>b返回正数，a=b返回0，a<b返回负数
+function abc(a,b){
+ return a-b;
+}
+
+js中的array没什么原则，
+1.数组中元素的类型可以任意类型
+var arr6 = ["haha",3.14,true,null,undefined,new Object()];==>length=6
+2.数组的长度是可以随时变化的,
+arr6[10] = "heiehi"
+此时arr6.length = 11;
+
+Date对象
+创建
+var date1 = new Date();//1970.1.1 0:0:0
+var date2 = new Date(1313123123)
+date1.getFullYear();获取年份
+date1.getMonth();注意0代表1月份
+data1.toLocaleString()，以本地时间格式表示;1992年5月3日 1：1:1
+
+正则对象RegExp()
+创建:
+var reg = new RegExp("e","gi");
+参数1:正则表达式;
+参数2:匹配模式  g:全局   i:忽略大小
+var reg2 = /e/g;这样也可以创建
+
+test方法:校验字符串是否能与正则表达式匹配;
+alert(reg.test("hello"));//true,hello里面已经包含了e
+
+String与正则结合的四个方法
+var str = "hello world"
+split切割:str.split(/o/g)==>hell, w,rld
+replace:str.replace(/l/g,"a")==>heaao worad
+match:str.match(/or/g)==>找到返回or，找不到返回null
+search:str.search(/e/g)==>1,返回索引位置
+
+
+BOM ：Browser Object Model，浏览器对象模型
+将浏览器中的各个组件封装成对象，我们可以使用这些对象来操作浏览器的一些动作 
+5个对象:
+window     浏览器的窗口
+location   浏览器的地址栏
+history    浏览器的历史纪录
+screen     屏幕信息
+navigator  将浏览器信息封装对象
+
+1。获得window对象，当使用浏览器加载网页时，由浏览器创建,直接使用
+window中的方法
+alert
+
+confirm:确认框   
+     var b = confirm("您确定要删除吗?");// 根据电击结果b为true/false  
+     alert(b)
+prompt：输入框
+
+     var str = prompt("请输入一个整数","0");//第二个参数为默认值，类似placeholder，点击确定时，返回string,取消时，返回null
+open:window.open("xxx.html")，返回值是新打开的window对象;//这里有四个参数，只用写一个参数就可以了，第二个参数为窗口名称，第三个为窗口特性,第四个参数为是否将新打开的创酷加入到浏览器历史纪录里
+close:window.close();
+
+setInterval  设置定时器
+    第一个参数是字符串形势，可以写js代码/或者放函数对象(不带括号),第二个参数单位为ms,返回值为当前开启的定时器id
+    var intervar1 = window.setInterval("alert('abc');",1000)
+    window.setInterval(func1,1000)
+    window.setInterval("func1()",1000)//效果同上
+clearInterval 清除定时器
+    window.clearInterval(interval1);
+    
+另一对定时器
+setTimeOut:延迟定时器，参数2时间后执行参数1
+     var intervar2 = window.setTimeOut("alert('abc');",1000)
+clearTimeout；只有在第一次执行之前停止才有意义
+     window.clearTimeout(interval2);
