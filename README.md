@@ -361,3 +361,127 @@ setTimeOut:延迟定时器，参数2时间后执行参数1
      var intervar2 = window.setTimeOut("alert('abc');",1000)
 clearTimeout；只有在第一次执行之前停止才有意义
      window.clearTimeout(interval2);
+
+一个文档对应一个window
+
+window的属性
+parent:当前窗口的父窗口
+frames:当前窗口的所有子窗口
+opener:当前窗口
+c.parent.frames[2]
+
+history
+window.history.forward();前进
+window.history.back();后退
+window.history.go(整数);0代表当前页面，1代表前进，－1代表后退
+
+location
+"window.location.href='new url'" 打开一个新的窗口 
+window.location.assign("new url")会产生历史纪录
+window.location.replace("new url")不会产生历史纪录
+
+DOM:document object model文档对象模型，用来控制页面中的内容,dom本质就是将文档中的所有内容封装成对象
+对象种类:
+document：文档本身
+element:所有标签
+text：标签内容
+attribute：标签属性
+common：注释、
+
+这5个有个共同的父类对象node，节点对象
+导航属性:
+parentNode父节点
+firstChild 
+lastChild
+nextsibling
+previoussibling
+
+dom的所有对象会在页面打开时，由浏览器负责创建,浏览器把dom的定点对象document对象饿引用交给了window对象
+
+document的获得
+var doc = window.document;
+
+element的获得
+var div = document.getElementsByTagName("div")[0];根据标签类型获取element
+var div2 = document.getElementById("one")根据div的id获取element
+var div3 = document.getElementsByClassName("two")[0];需要有class属性
+var div4 = document.getElementsByName("three")[0];需要name属性
+
+给id为one的按钮添加事件的方法
+方式1.
+div2.onclick=function(){
+    alert("叫啊叫啊");
+}
+
+
+onkeydown事件,键盘按下
+one.onkeydown=function(event){
+    //获得按下的按键
+    var key =  event.keyCode
+    if(key==13){//根据按下按键的ascii码来判断是否是回撤键
+     alert("表单被提交了");
+    }
+}
+
+onload:图片或者页面被加载完成,可以发放到body的属性里
+<body onload="alert('haha');">  执行是在body结束的时候执行
+
+
+onmousedown鼠标被按下，左中右键都会触发该方法event.button获得按下的是哪个按键，左0，中1，右2
+onmouseup松开
+
+onmouseout移开
+onmouseover移进
+ 
+onmousemove 当鼠标在元素上的时候，不断的触发某个方法event.clientX   event.clientY事件触发时鼠标的x,y
+
+onsubmit  当表单提交时触发,作用:表单验证
+one.onsubmit=function(){
+    return false/true;//返回true时可以提交表单，返回false，那么拦截表单提交
+    出了return可以改变表单提交的行为，还可以通过
+    event.preventDefault();//阻止默认事件的发生
+}
+
+stopPropagation()不再派发事件，应用场景，当一个div在另一个div里面时，点击里面的div只会触发一个方法
+
+创建并添加节点
+var a = document.createElement("a");//创建超链接标签
+a.setAttribute("href","http://www.baidu.com");//添加标签属性
+a.innerHTML="点我";//标签体
+div1.appendChild(a);
+
+删除节点:需要通过父节点删除
+var div2 = document.getElementById("div_2")
+var par = div2.parentNode;
+par.removeChild(div2);
+
+替换节点
+replaceChild
+
+克隆节点
+cloneNode(true/false);true时可能本身及所有子节点，false只可能节点本身
+insertBefore在某个节点之前插入
+
+
+colspan="2",一列占2列
+
+针对form表单中的元素的获取，可以通过以下方法获得节点
+var nameInput = document.form1.name;//按照层级顺序
+获取输入框里的值
+var name = nameInput.value;
+var reg = /^[a-zA-Z][a-zA-Z0-9_]{5,9}/g
+if(!reg.test(name)){
+   //正则校验test
+   alert("用户名6-10位，不能以数字开头")
+   return false;
+}
+
+
+var json = {"name":"tom","age":18};
+//遍历json对象的键
+for(var key in json){//for in循环只能用来遍历json的键，不能遍历数组
+ alert(key + "==>" + json[key])
+}
+
+设置select的option个数(length属性)可以将多余的option移除
+ 
